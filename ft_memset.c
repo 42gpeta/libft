@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:09:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/09 11:30:27 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/08 16:48:40 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/09 16:27:53 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	int	i;
 
 	i = 0;
-	while (*str)
+	while (i < n)
 	{
-		str++;
+		((unsigned char *)s)[i] = (unsigned char)c;
 		i++;
 	}
-
-	return (i);
+	return (s);
 }
 
-int	main(/*int argc, char* argv[]*/)
+int	main()
 {
-	char	test [] = "";
+	char	test1[10];
+	char	test [10];
 
-	printf("%d", ft_strlen(test));
+	memset(test1, 'k', sizeof(char) * 7);
+	ft_memset(test, 'k', sizeof(char) * 6);
+
+	printf("Reel : %s",test1) ;
+	printf("\n");
+	printf("Me : %s", test);
 
 	return 0;
 }

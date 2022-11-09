@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:09:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/09 11:30:27 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/08 18:00:30 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/08 18:33:59 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+char *strrchr(const char *s, int c)
 {
-	int	i;
+    int len;
+    char    test[];
 
-	i = 0;
-	while (*str)
-	{
-		str++;
-		i++;
-	}
-
-	return (i);
+    len = ft_strlen(*s);
+    while (len > 0)
+    {
+        s + len = test
+        if (s + len == c)
+        {
+            return 
+        }
+    }
 }
 
-int	main(/*int argc, char* argv[]*/)
+
+int    ft_strlen(char *str)
 {
-	char	test [] = "";
+    int i;
 
-	printf("%d", ft_strlen(test));
+    i = 0;
+    while (*str)
+    {
+        str++;
+        i++;
+    }
 
-	return 0;
+    return (i);
 }

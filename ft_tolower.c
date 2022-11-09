@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:09:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/09 11:30:27 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/08 15:38:47 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/08 16:13:33 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+int ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (*str)
+	if (c >= 65 && c <= 90)
 	{
-		str++;
-		i++;
-	}
+        c += 32;
 
-	return (i);
+		return (c);
+	}
 }
 
-int	main(/*int argc, char* argv[]*/)
+int	main()
 {
-	char	test [] = "";
+	char	test = 'E';
+	char	test2 = 'e';
 
-	printf("%d", ft_strlen(test));
+	printf("begin = %d | %c\nend = %d | %c ; reel = %d| num %c\n", test, test, ft_tolower(test), test2, test2, test2);
 
-	return 0;
+	return (0);
 }
