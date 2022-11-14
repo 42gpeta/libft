@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 18:00:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/10 11:31:25 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/09 15:51:19 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/10 19:09:42 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,47 @@
 #include <string.h>
 #include <unistd.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memcpy2(void *dest, const void *src, size_t n)
 {
 	int	i;
-	unsigned char	tmp;
+	char	*pdest;
+	char	*psrc;
+
+	pdest = (unsigned char *)dest;
+	psrc = (unsigned char *)src;
 
 	i = 0;
-	while (i < n)
+	while (i < n && (psrc)[i] != '\0')
 	{
-		((unsigned char *)tmp)[i] = ((unsigned char *)dest);
-		((unsigned char *)dest)[i] = ((unsigned char *)src);
-		((unsigned char *)src)[i] = ((unsigned char *)tmp);
+		pdest[i] = psrc[i];
 		i++;
 	}
+	while (i < n)
+	{
+		pdest[i] = '\0';
+		i++;
+	}
+
 	return (dest);
 }
 
 int	main()
 {
-	char	src[]="bonjour";
-	char	dest[]="aurevoir";
-	char	src2[]="bonjour";
-	char	dest2[]="aurevoir";
+	char	src[] = "bonjourou";
+	char	dest[] = "hokhoki";
+	char	src2[] = "bonjourou";
+	char	dest2[] = "hokhoki";
 
 	printf("----------MAN-----------\n");
 	printf("src : %s\ndest : %s\n\n", src, dest);
-	memmove(dest, src, 4);
-	//swap(dest, src, 5);
+	memcpy(dest, src, 5);
+	//strncpy(dest, src, 5);
 	printf("src apres : %s\ndest apres : %s", src, dest);
 	
 	printf("\n----------MOI-----------\n");
 
 	printf("src : %s\ndest : %s\n\n", src2, dest2);
-	ft_memmove(dest2, src2, 4);
+	ft_memcpy2(dest2, src2, 5);
 	printf("src apres : %s\ndest apres : %s", src2, dest2);
 
 	return (0);

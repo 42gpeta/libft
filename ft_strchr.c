@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 18:00:30 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/14 19:26:45 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/14 15:31:59 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/14 20:24:43 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 
-int	ft_strlen(const char *s)
+char *ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (*s)
+	while (*s != '\0')
 	{
+		if (*s == c)
+			return ((char *)s); // on pointe sur la premiere occurence 
 		s++;
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strrchr(const char *s, int c)
-{
-	int	len;
-	int	i;
-
-	len = ft_strlen(s);
-	while (len-- > 0)
-	{
-		if (s[len] == c)
-			return ((char *)&s[len]); // on pointe sur l'adresse de la dernierre occurence 
 	}
 
 	return (NULL);
@@ -50,11 +33,11 @@ int	main ()
 
 	printf("---------  MAN  ----------- \n");
 	printf("avant : %s\n", strMAN);
-	printf("apres : %s\n",strrchr(strMAN, 'o'));
+	printf("apres : %s\n",strchr(strMAN, '@'));
 	
 	printf("\n---------  MOI  ----------- \n");
 	printf("avant : %s\n", strMOI);
-	printf("apres : %s\n", ft_strrchr(strMOI, 'o'));
+	printf("apres : %s\n", ft_strchr(strMAN, '@'));
 
 	return 0;
 }

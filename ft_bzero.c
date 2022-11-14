@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:55:49 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/09 15:47:13 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/14 15:12:41 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,14 @@ int main()
     char    test[] = "bonjour";
     char    test1[] = "bonjour";
 
-    bzero(test, 7);
+    printf("man avant: %s\n",test);
+    printf("moi avant: %s\n",test1);
+	
+	bzero(test, 7);
     ft_bzero(test1, 7);
     
-    printf("Reel: %s\n",test);
-    printf("Reel: %s",test1);
+printf("man apres	: %s\n",test);
+printf("moi apres	: %s\n",test1);
 
     return 0;
 }
