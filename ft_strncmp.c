@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:27:23 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/14 19:47:54 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/15 15:48:40 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int	main()
 	char	testMOI_2[]= "bonjour";
 	int		resMOI;
 
-	resMAN = strncmp(testMAN_1, testMAN_2, 3);
-	resMOI = ft_strncmp(testMOI_1,	testMOI_2, 3);
+	resMAN = strncmp(testMAN_1, testMAN_2, 7);
+	resMOI = ft_strncmp(testMOI_1,	testMOI_2, 7);
 
 	printf("MAN = %d\n", resMAN);
 	printf("MOI = %d\n", resMOI);
