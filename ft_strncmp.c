@@ -6,13 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:27:23 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/15 15:48:40 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:24:01 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -39,12 +37,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (res);
 }
 
-int	main()
+/* int	main()
 {
-	char	testMAN_1[]= "bonkour";
+	char	testMAN_1[]= "bonzour";
 	char	testMAN_2[]= "bonjour";
 	int		resMAN;
-	char	testMOI_1[]= "bonkour";
+	char	testMOI_1[]= "bonzour";
 	char	testMOI_2[]= "bonjour";
 	int		resMOI;
 
@@ -55,4 +53,4 @@ int	main()
 	printf("MOI = %d\n", resMOI);
 
 	return (0);
-}
+} */

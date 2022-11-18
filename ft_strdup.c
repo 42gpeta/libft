@@ -1,35 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:09:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:21:43 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/18 19:33:43 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/18 19:33:55 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// a faire
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-	return (i);
-}
-
-/* int	main(void)
-{
-	char	test [] = "bonjour";
-
-	printf("%ld", ft_strlen(test));
-
-	return 0;
-} */
+char *ft_strdup(const char *s)

@@ -6,13 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:57:08 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/15 17:12:06 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:58:50 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -42,7 +40,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (res);
 }
 
-int	main ()
+/* int	main (void)
 {
 	char s1_MAN[]= "bonj";
 	char s2_MAN[]= "";
@@ -58,4 +56,4 @@ int	main ()
 	printf("MOI = %d\n", MOI);
 
 	return (0);
-}
+} */

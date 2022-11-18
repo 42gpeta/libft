@@ -5,49 +5,62 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 18:00:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/10 11:31:25 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/12 15:58:19 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/18 19:52:21 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, void *src, size_t n)
 {
-	int	i;
-	unsigned char	tmp;
+	size_t	i;
+	char	*pdest;
+	char	*psrc;
 
 	i = 0;
-	while (i < n)
+	pdest = (unsigned char *)dest; // cast la valeur contenur dans dest et src
+	psrc = (unsigned char *)src;
+
+	if (pdest == NULL && psrc == NULL) // protection si les 2 sont nuls
+		return (NULL);
+	if (psrc < pdest) // si l'adresse de src et plus petite que l'adresse de dest (risque d'overlap si on ne fait pas ca)
 	{
-		((unsigned char *)tmp)[i] = ((unsigned char *)dest);
-		((unsigned char *)dest)[i] = ((unsigned char *)src);
-		((unsigned char *)src)[i] = ((unsigned char *)tmp);
+		while (n-- > 0) // on remplit de la droite vers la gauche pour ne pas tout modifier dans src
+			pdest[n] = psrc[n];
+		return (pdest);
+	}
+
+	while (i < n) // si l'adresse de dest et + petite (aucun risque d'overlap)
+	{
+		pdest[i] = psrc[i];
 		i++;
 	}
 	return (dest);
 }
 
-int	main()
+int		main()
 {
-	char	src[]="bonjour";
-	char	dest[]="aurevoir";
-	char	src2[]="bonjour";
-	char	dest2[]="aurevoir";
+	char src[] = "bonjour";
+	char src2[] = "bonjour";
+	char dest[] = "aurevoir";
+	char dest2[] = "aurevoir";
 
-	printf("----------MAN-----------\n");
-	printf("src : %s\ndest : %s\n\n", src, dest);
-	memmove(dest, src, 4);
-	//swap(dest, src, 5);
-	printf("src apres : %s\ndest apres : %s", src, dest);
+	printf("\n---------  MAN  ---------\n");
+	printf("avant\nsrc : %s | dest : %s\n", src, src + 2);
+
+	memmove(src + 2, src, sizeof(char) * 4);
+
+	printf("apres\nsrc : %s | dest : %s\n", src, src + 2);
 	
-	printf("\n----------MOI-----------\n");
+	//				******************
 
-	printf("src : %s\ndest : %s\n\n", src2, dest2);
-	ft_memmove(dest2, src2, 4);
-	printf("src apres : %s\ndest apres : %s", src2, dest2);
+	printf("\n\n---------  MOI  ---------\n");
+	printf("avant\nsrc : %s | dest : %s\n", src2, src2 + 2);
 
-	return (0);
+	ft_memmove(src2 + 2, src2, sizeof(char) * 4);
+
+	printf("apres\nsrc : %s | dest : %s\n", src2, src2 + 2);
+
+	return 0;
 }

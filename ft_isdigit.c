@@ -6,26 +6,21 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:03:32 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/07 17:20:38 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 20:00:14 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
-	{
 		return (0);
-	}
 	else
-	{
 		return (1);
-	}
 }
 
-int	main(int argc, char argv[])
+/* int	main(int argc, char argv[])
 {
 	char	test='q';
 
@@ -33,4 +28,4 @@ int	main(int argc, char argv[])
 	printf("result = %d\nvaleur dec = %d", ft_isdigit(test), test);
 
 	return (0);
-}
+} */

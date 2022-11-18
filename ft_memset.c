@@ -6,13 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:48:40 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/14 15:12:47 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:47:36 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -27,19 +25,19 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-int	main()
+/* int	main()
 {
-	char	test1[10];
-	char	test [10];
+	char	testMAN[]= "bonjour";
+	char	testMOI[]= "bonjour";
 
-	printf("Man avant: %s\n",test1);
-	printf("Moi avant: %s\n", test);
+	printf("MAN avant: %s\n",testMAN);
+	printf("MOI avant: %s\n", testMOI);
+
+	memset(testMAN, 'k', sizeof(char) * 5);
+	ft_memset(testMOI, 'k', sizeof(char) * 5);
+
+	printf("MAN apres: %s\n",testMAN);
+	printf("MOI apres: %s\n", testMOI);
 	
-	memset(test1, 'k', sizeof(char) * 7);
-	ft_memset(test, 'k', sizeof(char) * 7);
-
-	printf("Man apres: %s\n",test1);
-	printf("Moi apres: %s\n", test);
-
-	return 0;
-}
+	return (0);
+} */

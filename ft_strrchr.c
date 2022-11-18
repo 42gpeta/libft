@@ -6,27 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:00:30 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/14 19:26:45 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:21:58 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-
-int	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -39,11 +23,10 @@ char	*ft_strrchr(const char *s, int c)
 		if (s[len] == c)
 			return ((char *)&s[len]); // on pointe sur l'adresse de la dernierre occurence 
 	}
-
 	return (NULL);
 }
 
-int	main ()
+/* int	main ()
 {
 	char	strMAN[] = "bonjour@42.fr";
 	char	strMOI[] = "bonjour@42.fr";
@@ -57,4 +40,4 @@ int	main ()
 	printf("apres : %s\n", ft_strrchr(strMOI, 'o'));
 
 	return 0;
-}
+} */

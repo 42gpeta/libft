@@ -6,13 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:51:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/09 18:00:28 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:54:53 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -29,15 +27,14 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		((unsigned char *)dest)[i] = '\0';
 		i++;
 	}
-
 	return (dest);
 }
 
 int	main()
 {
-	char	src[] = "bonj";
+	char	src[] = "bonjourjour";
 	char	dest[] = "hokhoki";
-	char	src2[] = "bonj";
+	char	src2[] = "bonjourjour";
 	char	dest2[] = "hokhoki";
 
 	printf("----------MAN-----------\n");

@@ -6,13 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:10:51 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/14 20:25:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:59:57 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
@@ -31,10 +29,9 @@ void *ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int main()
+/* int main()
 {
 	char test[] = "bonjour@test.fr";
-	////char test2[] = {'a','b','c','d','e','f'};
 	char test2[] = "bonjour@test2.fr";
 
 	char *ptest = memchr(test, 'o', strlen(test));
@@ -45,4 +42,4 @@ int main()
 	printf("MOI  = %s\n", ptest2);
 
 	return 0;
-}
+} */

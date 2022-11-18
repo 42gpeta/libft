@@ -6,13 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:51:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/10 19:09:42 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:54:55 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	*ft_memcpy2(void *dest, const void *src, size_t n)
 {
@@ -34,7 +32,6 @@ void	*ft_memcpy2(void *dest, const void *src, size_t n)
 		pdest[i] = '\0';
 		i++;
 	}
-
 	return (dest);
 }
 

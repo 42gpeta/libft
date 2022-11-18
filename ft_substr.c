@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:38:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:01:23 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/16 14:45:07 by gpeta             #+#    #+#             */
+/*   Updated: 2022/11/18 19:19:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c >= 97 && c <= 122)
+	char	*ns;
+	size_t	i;
+
+	if (s == NULL || len == 0) // ou (s == NULL || len == 0)
+		return (NULL);
+	ns = malloc(sizeof(*ns) * len);
+	i = 0;
+	while (i < len)
 	{
-        c -= 32;
-		return (c);
+		ns[i] = s[start + i];
+		i++;
 	}
+	return (ns);
 }
 
-/* int	main(void)
+/* int	main(int argc, char **argv)
 {
-	char	testMAN = 'l';
-	char	testMOI = 'l';
+	char	test[]="bonjour";
+	char	*res;
 
-	printf("*** MAN ***\navant : %d | %c\napres : %d | %c\n\n", testMAN, testMAN, toupper(testMAN), toupper(testMAN));
-	printf("*** MOI ***\navant : %d | %c\napres : %d | %c\n\n", testMOI, testMOI, ft_toupper(testMOI), ft_toupper(testMOI));
+	res = ft_substr(test,4,4);
+
+	printf("%s\n%s\n", test, res);
+
 	return (0);
 } */

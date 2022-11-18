@@ -6,31 +6,30 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:14:39 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/07 17:17:54 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 20:00:32 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-	{
 		return (0);
-	}
 	else
-	{
 		return (1);
-	}
 }
 
-int	main(int argc, char argv[])
+/* int	main(int argc, char argv[])
 {
-	char	test='q';
+	char	testMAN='\t';
+	char	testMOI='\t';
 
-	ft_isalnum(test);
-	printf("result = %d\nvaleur dec = %d", ft_isalnum(test), test);
+	isalnum(testMAN);
+	printf("*** MAN ***\nresult = %d\nvaleur dec = %d\n\n", ft_isalnum(testMAN), testMAN);
+
+	ft_isalnum(testMOI);
+	printf("*** MOI ***\nresult = %d\nvaleur dec = %d\n", ft_isalnum(testMOI), testMOI);
 
 	return (0);
-}
+} */

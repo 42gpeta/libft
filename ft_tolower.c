@@ -6,29 +6,28 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:38:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/08 16:13:33 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/18 19:00:17 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
 int ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
         c += 32;
-
 		return (c);
 	}
 }
 
-int	main()
+/* int	main(void)
 {
-	char	test = 'E';
-	char	test2 = 'e';
+	char	testMAN = '\t';
+	char	testMOI = '\t';
 
-	printf("begin = %d | %c\nend = %d | %c ; reel = %d| num %c\n", test, test, ft_tolower(test), test2, test2, test2);
+	printf("*** MAN ***\navant : %d | %c\napres : %d | %c\n\n", testMAN, testMAN, tolower(testMAN), tolower(testMAN));
+	printf("*** MOI ***\navant : %d | %c\napres : %d | %c\n\n", testMOI, testMOI, ft_tolower(testMOI), ft_tolower(testMOI));
 
 	return (0);
-}
+} */
