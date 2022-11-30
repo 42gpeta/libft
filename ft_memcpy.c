@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:51:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:54:53 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/28 14:56:12 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,10 @@ int	main()
 	memcpy(dest, src, 5);
 	//strncpy(dest, src, 5);
 	printf("src apres : %s\ndest apres : %s", src, dest);
+
+	for (i = 0; i < strlen(dest); i++)
+		printf("dest[%d] : %s\n", i, dest[i]);
+
 	
 	printf("\n----------MOI-----------\n");
 

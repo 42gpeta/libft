@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:58:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:52:21 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/11/28 16:52:25 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 	char	*psrc;
 
 	i = 0;
-	pdest = (unsigned char *)dest; // cast la valeur contenur dans dest et src
+	pdest = (unsigned char *)dest; // cast la valeur contenue dans dest et src
 	psrc = (unsigned char *)src;
 
 	if (pdest == NULL && psrc == NULL) // protection si les 2 sont nuls
