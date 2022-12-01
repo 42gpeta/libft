@@ -1,33 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:09:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 15:21:01 by gpeta            ###   ########.fr       */
+/*   Created: 2022/12/01 18:24:10 by gpeta             #+#    #+#             */
+/*   Updated: 2022/12/01 18:30:14 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// a faire
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s++)
-		i++;
-	return (i);
-}
-
-/* int	main(void)
-{
-	char	test [] = "bonjour";
-
-	printf("%ld", ft_strlen(test));
-
-	return 0;
-}
- */
+void ft_putnbr_fd(int n, int fd)

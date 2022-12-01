@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 16:22:55 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/01 18:16:51 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,31 +29,27 @@
 int	f_count (const char *s, char c)
 {
 	int	i;
-	int check;
+	int word;
 
 	if (!*s)
 		return (0);
 	i = 0;
-	check = 0;
+	word = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c && check == 0)
+		if (s[i] == c)
 		{
-			check = 1;
+			word++;
 			i++;
 		}
-		else if (s[i] == c)
-			check = 0;	
-		s++;
-		/*next = f_next_is_wspace(s[i], s[i + 1]);
-		if (next == 1)
-			word--;*/
+		else
+			i++;
+	}
+	printf("f_count ** nb word : %d\n", word);  // a supprimer
+	return (word);
 
 	}
 	
-//	printf("f_count ** nb word : %d\n", word);  // a supprimer
-	return (i);
-}
 
 char	*f_tabsplit (const char *str, int firstc, int lastc)
 {
@@ -119,22 +115,27 @@ int	main(void)
 	int	i;
 	int number_word;
 
+	// ******** F_COUNT ******** : compter les mots
+	
 	number_word = f_count(test, ',');
-	printf("f_count ** nb word : %d (main)\n", number_word);  // a supprimer
+	//printf("f_count ** nb word : %d (main)\n", number_word);  // a supprimer
 
-	//f_count(test, ',');
+	
+	// ******** FT_SPLIT ******** : decouper les mots
+
 	//ptest = f_tabsplit(test,8,12);
-	ptest2 = ft_split(test, ',');
 
-	//for (i = 0; i < strlen(ptest); i++)
-	//	printf("ptest[%d] : %c\n", i, ptest[i]);
+	
+	// ******** FT_SPLIT ******** : fonction finale
+	
+/* 	ptest2 = ft_split(test, ',');
 
 	printf("\n----------------------\n");
 
 	for (i = 0; i < number_word; i++)
 		printf("[%d] : %s \n",i, ptest2[i]);
 
-	printf("\nmot isole : %s\n",ptest2[0]);
+	printf("\nmot isole : %s\n",ptest2[0]); */
 	
 
 	return 0;

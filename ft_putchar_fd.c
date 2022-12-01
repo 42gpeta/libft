@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 18:09:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 15:21:01 by gpeta            ###   ########.fr       */
+/*   Created: 2022/12/01 18:22:38 by gpeta             #+#    #+#             */
+/*   Updated: 2022/12/01 18:52:49 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// a verifier
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (*s++)
-		i++;
-	return (i);
+	write(fd, &c, 1);
 }
-
-/* int	main(void)
-{
-	char	test [] = "bonjour";
-
-	printf("%ld", ft_strlen(test));
-
-	return 0;
-}
- */
