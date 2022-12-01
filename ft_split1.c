@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 19:57:55 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/01 20:03:10 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	f_count (const char *s, char c)
 	if (!*s)
 		return (0);
 	i = 0;
-	word = 1; // @TODO 1
+	word = 1; // @TODO 42
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
