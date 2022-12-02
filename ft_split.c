@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 16:22:55 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/02 15:42:15 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	*f_tabsplit (const char *str, int firstc, int lastc)
 		if (s[i] != c && pos < 0)
 			pos = i;
 		
-		else if (i == ft_strlen(s) || s[i] == c && pos >= 0)
+		else if (/* i == ft_strlen(s) || */ s[i] == c && pos >= 0)
 		{
 			ntab[j++] = f_tabsplit(s, pos, i); // comme ntab est un pointeur de pointeur, on stocke les elements mots dans le 1er tab, le 2e tab contient les lettres des mots
 			pos = -1;
