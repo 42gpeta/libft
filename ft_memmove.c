@@ -6,10 +6,11 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:58:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/28 16:52:25 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 17:03:24 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "libft.h"
 
 void	*ft_memmove(void *dest, void *src, size_t n)
@@ -39,7 +40,7 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 	return (dest);
 }
 
-int		main()
+ int		main()
 {
 	char src[] = "bonjour";
 	char src2[] = "bonjour";
@@ -63,4 +64,4 @@ int		main()
 	printf("apres\nsrc : %s | dest : %s\n", src2, src2 + 2);
 
 	return 0;
-}
+} */

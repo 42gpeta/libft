@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:22:05 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 18:30:14 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 15:43:12 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,3 +15,6 @@
 #include "libft.h"
 
 void ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	
+}
