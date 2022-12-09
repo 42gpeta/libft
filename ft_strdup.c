@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:33:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 16:53:57 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:37:32 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strdup(const char *s)
 
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	test[]= "bonjour";
 
@@ -43,4 +43,4 @@ int	main(void)
 
 	return (0);
 	
-}
+} */

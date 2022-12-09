@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split2.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 17:28:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:42:21 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// a faire
+// OK
 
 #include "libft.h"
-
-/*int	f_next_is_wspace (char prev_c, char next_c)
-/*int	f_next_is_wspace (char *s, int len, char prev_c, char next_c)
-{
-	if (prev_c == 32 || (prev_c >= 9 && prev_c <= 13) && next_c == '\0')
-		wspace = 1;
-	else
-		wspace = 0;
-
-	if (s[len - 1] == wspace)
-	
-} */
 
 int	f_len (const char *s, char c)
 {
@@ -33,7 +21,7 @@ int	f_len (const char *s, char c)
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
 		i++;
-	//printf("f_len ** nb de char dans word : %d\n", i);  // a supprimer
+//	printf("f_len ** nb de char dans word : %d\n", i);  // a supprimer
 	return (i);
 }
 
@@ -54,14 +42,14 @@ int	f_count (const char *s, char c)
 			word++;
 
 	}
-	//printf("f_count ** nb word : %d\n", word);  // a supprimer
+//	printf("f_count ** nb word : %d\n", word);  // a supprimer
 	return (word);
 
 	}
 	
 char	*f_strndup(const char *s, int nj)
 {
-    size_t	i;
+    int	i;
 	char	*ps;
 
 	i = 0;
@@ -87,8 +75,8 @@ char	*f_strndup(const char *s, int nj)
 
 	if (s == NULL)
 		return (NULL);
-	w = f_count(s, c); // ?necessaire => oui
-	//printf("ft_split ** nb word : %d\n", w);  // a supprimer
+	w = f_count(s, c);
+//	printf("ft_split ** nb word : %d\n", w);  // a supprimer
 	
 	ntab = (char **)malloc(sizeof(char *) * (w + 1) );
 	if (!ntab)
@@ -119,18 +107,18 @@ char	*f_strndup(const char *s, int nj)
 	int	i;
 	int number_word;
 
-	// ******** F_COUNT ******** : compter les mots
+//	 ******** F_COUNT ******** : compter les mots
 	
-	//number_word = f_count(test, ',');
-	//printf("f_count ** nb word : %d (main)\n", number_word);  // a supprimer
+//	number_word = f_count(test, ',');
+//	printf("f_count ** nb word : %d (main)\n", number_word);  // a supprimer
 
 	
-	// ******** FT_SPLIT ******** : decouper les mots
+//	 ******** FT_SPLIT ******** : decouper les mots
 
-	//ptest = f_tabsplit(test,8,12);
+//	ptest = f_tabsplit(test,8,12);
 
 	
-	// ******** FT_SPLIT ******** : fonction finale
+//	 ******** FT_SPLIT ******** : fonction finale
 	
 //  	ptest2 = ft_split(test, ',');
 
@@ -154,7 +142,7 @@ char	*f_strndup(const char *s, int nj)
 	return 0;
 } */
 
-int		main(void)
+/* int		main(void) *** BON MAIN ***
 {
 	int i = 0;
 	char **tab;
@@ -166,4 +154,4 @@ int		main(void)
 		i++;
 	}
 	return (0);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:20:31 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 15:43:07 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:35:13 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+/* char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int	i;
 	char *ps;
@@ -25,4 +25,4 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		ps = f()
 	}
-}
+} */

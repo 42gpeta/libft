@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 17:44:37 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/30 17:13:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 19:21:47 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (nwtab);
 }
 
-int main(int ac, char **av)
+/* int main(int ac, char **av)
 {
 	int test[7] = {1, 2 , 3 ,4 , 5 ,6 , 7};
 	//char test[] = "bonjour";
@@ -93,4 +93,4 @@ int main(int ac, char **av)
 		printf("array2[%d] : %d\n", i, array2[i]);
 
 		return (0);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:24:10 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/02 17:35:38 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:36:58 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "147483648", 9);
 	}
 	else if (n >= 0 && n <= 9)
-		ft_putchar_fd(n + '0');
+		ft_putchar_fd(n + '0', fd);
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

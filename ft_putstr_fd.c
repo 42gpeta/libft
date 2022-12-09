@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:23:10 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/02 17:22:04 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:36:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putstr_fd(char *s, int fd)
 	
 }
 
-int main(int ac, char **av)
+/* int main(int ac, char **av)
 {
 	int fd = 1;
 
@@ -38,3 +38,4 @@ int main(int ac, char **av)
 		printf("RAS\n");
 	return (0);
 }
+ */

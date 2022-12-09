@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:19:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 14:25:29 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:34:45 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_itoa(int n)
 	len = f_intlen(n);
 	printf("__ft_itoa len = %d\n\n", len); // a supprimer
 
-	tab_itoa = malloc((len + 1) * (*tab_itoa));
+	tab_itoa = malloc(sizeof(*tab_itoa) * (len + 1));
 	if (!tab_itoa)
 		return (NULL);
 	
@@ -87,10 +87,10 @@ char	*ft_strrev(char *str)
 }
 
 
-int	main(int ac, char **av)
+/* int	main(void)
 {
 	int	testint = -15648658;
-	char	teststr[] = "156489";
+//	char	teststr[] = "156489";
 
 ////	*** TEST F_INTLEN ***
 //	printf("__main (f_intlen) : %d\n", f_intlen(testint));
@@ -99,9 +99,9 @@ int	main(int ac, char **av)
 //	printf("__main (ft_strrev) : %s\n", ft_strrev(teststr));
 
 ////	*** TEST ITOA ***
-//	printf("__main (ft_itoa) : %s\n", ft_itoa(test));
-	ft_itoa(testint);
+	printf("__main (ft_itoa) : %s\n", ft_itoa(testint));
+//	ft_itoa(testint);
 	
 	
 	return (0);
-}
+} */

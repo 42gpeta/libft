@@ -6,16 +6,15 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:48:40 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 17:03:44 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/09 18:20:42 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
@@ -26,7 +25,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
- int	main()
+/* int	main()
 {
 	char	testMAN[]= "bonjour";
 	char	testMOI[]= "bonjour";
