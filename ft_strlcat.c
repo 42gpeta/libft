@@ -6,17 +6,13 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:25:40 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 23:42:30 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:55:47 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // a faire
 
-/*
-
-    concatener les deux chaine de caracteres (dst + src)
-
-*/
+//    concatener les deux chaine de caracteres (dst + src)
 
 #include "libft.h"
 
@@ -56,6 +52,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	printf("res = %ld\n", res);
 	//printf("dst[%s]\n", dst);
-	
+
 	return (0);
 } */

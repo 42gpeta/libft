@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:31:59 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 23:38:21 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:54:56 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strchr(const char *s, int c)
 	printf("---------  MAN  ----------- \n");
 	printf("avant : %s\n", strMAN);
 	printf("apres : %s\n",strchr(strMAN, ' '));
-	
+
  	printf("\n---------  MOI  ----------- \n");
 	printf("avant : %s\n", strMOI);
 	printf("apres : %s\n", ft_strchr(strMAN, ' '));
