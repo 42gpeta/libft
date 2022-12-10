@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:42:21 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 16:19:12 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include "libft.h"
 
-int	f_len (const char *s, char c)
+int	f_len(const char *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != c && s[i] != '\0')
@@ -25,10 +25,10 @@ int	f_len (const char *s, char c)
 	return (i);
 }
 
-int	f_count (const char *s, char c)
+int	f_count(const char *s, char c)
 {
 	int	i;
-	int word;
+	int	word;
 
 	i = 0;
 	word = 0;
@@ -40,16 +40,14 @@ int	f_count (const char *s, char c)
 		s += i;
 		if (i != 0)
 			word++;
-
 	}
 //	printf("f_count ** nb word : %d\n", word);  // a supprimer
 	return (word);
+}
 
-	}
-	
 char	*f_strndup(const char *s, int nj)
 {
-    int	i;
+	int		i;
 	char	*ps;
 
 	i = 0;
@@ -58,15 +56,14 @@ char	*f_strndup(const char *s, int nj)
 		return (NULL);
 	while (s[i] && i < nj)
 	{
-		ps[i]= s[i];
+		ps[i] = s[i];
 		i++;
 	}
 	ps[i] = '\0';
 	return (ps);
-
 }
 
- char	**ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**ntab;
 	int		w;
@@ -77,11 +74,9 @@ char	*f_strndup(const char *s, int nj)
 		return (NULL);
 	w = f_count(s, c);
 //	printf("ft_split ** nb word : %d\n", w);  // a supprimer
-	
-	ntab = (char **)malloc(sizeof(char *) * (w + 1) );
+	ntab = (char **)malloc(sizeof(char *) * (w + 1));
 	if (!ntab)
 		return (NULL);
-	
 	i = 0;
 	j = 0;
 	while (i < w)
@@ -90,13 +85,12 @@ char	*f_strndup(const char *s, int nj)
 			s++;
 		j = f_len(s, c);
 		ntab[i] = f_strndup(s, j);
-		printf("i = %d\nj = %d\nS = %c\n", i, j, *s);
 		s += j;
 		i++;
 	}
 	ntab[i] = NULL;
 	return (ntab);
-} 
+}
 
 /* int	main(void)
 {
@@ -142,11 +136,11 @@ char	*f_strndup(const char *s, int nj)
 	return 0;
 } */
 
-/* int		main(void) *** BON MAIN ***
+/* int		main(void) // *** BON MAIN ***
 {
 	int i = 0;
 	char **tab;
-		
+
 	tab = ft_split("bonjour je m'appel Arthur", ' ');
 	while (i < 4)
 	{

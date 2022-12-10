@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:19:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:34:45 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 16:08:11 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,15 @@ char	*ft_strrev(char *str);
 
 char	*ft_itoa(int n)
 {
-	int	i;
-	int	len;
+	int		i;
+	int		len;
 	char	*tab_itoa;
 
 	len = f_intlen(n);
-	printf("__ft_itoa len = %d\n\n", len); // a supprimer
-
+//	printf("__ft_itoa len = %d\n\n", len); // a supprimer
 	tab_itoa = malloc(sizeof(*tab_itoa) * (len + 1));
 	if (!tab_itoa)
 		return (NULL);
-	
 	i = 0;
 	if (n < 0)
 		n *= -1;
@@ -40,17 +38,15 @@ char	*ft_itoa(int n)
 	}
 	tab_itoa[i] = '-';
 	tab_itoa[i + 1] = '\0';
-	printf("__ft_itoa\n");  // a supprimer
-	for (i = 0; tab_itoa[i] != '\0'; i++)  // a supprimer
-		printf("tab[%d] = %c\n", i , tab_itoa[i]);  // a supprimer
+//	printf("__ft_itoa\n");  // a supprimer
+//	for (i = 0; tab_itoa[i] != '\0'; i++)  // a supprimer
+//		printf("tab[%d] = %c\n", i , tab_itoa[i]);  // a supprimer
 	ft_strrev(tab_itoa);
-	printf("\n%s\n(str apres rev)\n", tab_itoa); // a supprimer
-	
+//	printf("\n%s\n(str apres rev)\n", tab_itoa); // a supprimer
 	return (tab_itoa);
-
 }
 
-int		f_intlen(int n)
+int	f_intlen(int n)
 {
 	int	i;
 
@@ -59,7 +55,7 @@ int		f_intlen(int n)
 	{
 		n *= -1;
 		i++;
-	} 
+	}
 	while (n > 0)
 	{
 		n /= 10;
@@ -86,22 +82,20 @@ char	*ft_strrev(char *str)
 	return (str);
 }
 
+// int	main(void)
+// {
+// 	int	testint = -15648658;
+// //	char	teststr[] = "156489";
 
-/* int	main(void)
-{
-	int	testint = -15648658;
-//	char	teststr[] = "156489";
+// 	*** TEST F_INTLEN ***
+// //	printf("__main (f_intlen) : %d\n", f_intlen(testint));
 
-////	*** TEST F_INTLEN ***
-//	printf("__main (f_intlen) : %d\n", f_intlen(testint));
+// 	*** TEST ft_strrev ***
+// //	printf("__main (ft_strrev) : %s\n", ft_strrev(teststr));
 
-////	*** TEST ft_strrev***
-//	printf("__main (ft_strrev) : %s\n", ft_strrev(teststr));
+// 	*** TEST ITOA ***
+// 	printf("__main (ft_itoa) : %s\n", ft_itoa(testint));
+// //	ft_itoa(testint);
 
-////	*** TEST ITOA ***
-	printf("__main (ft_itoa) : %s\n", ft_itoa(testint));
-//	ft_itoa(testint);
-	
-	
-	return (0);
-} */
+// 	return (0);
+// }
