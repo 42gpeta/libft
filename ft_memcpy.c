@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:51:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:19:01 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:46:30 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@
 	return (pdest);
 } */
 
-
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
@@ -60,11 +59,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	pdest = (char *)dest;
 	psrc = (char *)src;
-
 	if (!pdest && !psrc)
 		return (0);
-
-	i = 0;	
+	i = 0;
 	while (i < n && psrc[i] != '\0')
 	{
 		pdest[i] = psrc[i];
@@ -73,7 +70,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	pdest[i] = '\0';
 	return (pdest);
 }
-
 
 /* int	main()
 {

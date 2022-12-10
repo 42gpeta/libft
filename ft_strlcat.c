@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:25:40 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/22 15:03:17 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:42:30 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	len_src = ft_strlen(src);
 	len_dst = ft_strlen(dst);
-	
 	if (size <= len_dst || size == 0)
 		return (len_src + size);
-	
 	while (src[i] && len_dst + i < size - 1)
 	{
 		dst[len_dst + i] = src[i];
@@ -41,7 +39,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[len_dst + i] = '\0';
 	printf("%s\n", dst); // a supprimer
 	return (len_src + len_dst);
-
 }
 
 /* int	main(int ac, char **av)

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:45:07 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:19:28 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:30:48 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ns;
 	size_t	i;
 
-	if (s == NULL || len == 0) // ou (s == NULL || len == 0)
+	if (s == NULL || len == 0)
 		return (NULL);
 	ns = malloc(sizeof(*ns) * len);
 	i = 0;

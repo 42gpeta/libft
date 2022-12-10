@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:23:10 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:36:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:41:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0') 
+	while (s[i] != '\0')
 		ft_putchar_fd(s[i++], fd);
-	
 }
 
 /* int main(int ac, char **av)

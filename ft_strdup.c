@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:33:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:37:32 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:46:50 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(const char *s)
 {
-    size_t	i;
+	size_t	i;
 	char	*ps;
 	size_t	len;
 
@@ -24,12 +24,11 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	while (i < len)
 	{
-		ps[i]= s[i];
+		ps[i] = s[i];
 		i++;
 	}
 	ps[i] = '\0';
 	return (ps);
-
 }
 
 /* int	main(void)

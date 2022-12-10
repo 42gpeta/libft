@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:22:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:25:50 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:43:27 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	j = 0;
 	i = 0;
-	if (little[0] == '\0')	// si little est vide
+	// si little est vide
+	if (little[0] == '\0')
 		return ((char *)big);
-	else if (len == 0)		// si len = 0
+	// si len = 0
+	else if (len == 0)
 		return (NULL);
-	
 	while (big[i] != '\0' && i < len)
 	{
 		j = 0;
@@ -31,7 +32,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			j++;
 			if (little[j] == '\0')
-				return ((char *)(&big[i]));    // il faut trouver tout little !
+				return ((char *)(&big[i]));
+			// il faut trouver tout little !
 		}
 		i++;
 	}
