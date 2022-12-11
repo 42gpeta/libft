@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:45:07 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 23:30:48 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/11 22:05:09 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ns;
 	size_t	i;
 
-	if (s == NULL || len == 0)
+	if (!s)
 		return (NULL);
-	ns = malloc(sizeof(*ns) * len);
+	ns = malloc(sizeof(*ns) * (len + 1));
+	if (!ns)
+		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < len && start < ft_strlen(s))
 	{
 		ns[i] = s[start + i];
 		i++;
 	}
+	ns[i] = '\0';
 	return (ns);
 }
 

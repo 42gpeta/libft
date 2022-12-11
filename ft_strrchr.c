@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:00:30 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 23:56:19 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/11 20:31:50 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ char	*ft_strrchr(const char *s, int c)
 	int	len;
 
 	len = ft_strlen(s);
+	if (c == '\0')
+		return ((char *)s + ft_strlen(s));
 	while (len-- > 0)
 	{
 		if (s[len] == c)
 			return ((char *)&s[len]);
-			// on pointe sur l'adresse de la dernierre occurence 
+			// on pointe sur l'adresse de la derniere occurence 
 	}
 	return (NULL);
 }

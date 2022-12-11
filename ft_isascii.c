@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:23:20 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 20:00:19 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/11 18:33:42 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (0);
-	else
 		return (1);
+	else
+		return (0);
 }
 
 /* int	main(int argc, char argv[])

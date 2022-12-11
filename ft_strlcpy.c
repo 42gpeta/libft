@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 17:03:42 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:25:13 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/11 20:31:47 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,18 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	lsrc = ft_strlen(src);
 	if (size == 0)
 		return (lsrc);
+	if (src[0] == '\0')
+	{
+		dst[0] = '\0';
+		return (lsrc);
+	}
 	while (i < size - 1 && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (lsrc);
 }
 
 /* int	main(void)
