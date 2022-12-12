@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:19:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 16:08:11 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/12 15:36:52 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,38 @@
 #include "libft.h"
 
 int		f_intlen(int n);
-char	*ft_strrev(char *str);
+
+char	*ft_spe_case(int i)
+{
+	if (i == 0)
+		return (ft_strdup("0"));
+	return (ft_strdup("-2147483648"));
+}
 
 char	*ft_itoa(int n)
 {
-	int		i;
 	int		len;
 	char	*tab_itoa;
 
+	if (n == 0 || n == -2147483648)
+		return (ft_spe_case(n));
 	len = f_intlen(n);
-//	printf("__ft_itoa len = %d\n\n", len); // a supprimer
-	tab_itoa = malloc(sizeof(*tab_itoa) * (len + 1));
+	tab_itoa = malloc(sizeof(char) * (len + 1));
 	if (!tab_itoa)
 		return (NULL);
-	i = 0;
 	if (n < 0)
+	{
 		n *= -1;
+		tab_itoa[0] = '-';
+	}
+	tab_itoa[len] = '\0';
+	len--;
 	while (n > 0)
 	{
-		tab_itoa[i++] = n % 10 + '0';
+		tab_itoa[len] = n % 10 + '0';
 		n /= 10;
+		len--;
 	}
-	tab_itoa[i] = '-';
-	tab_itoa[i + 1] = '\0';
-//	printf("__ft_itoa\n");  // a supprimer
-//	for (i = 0; tab_itoa[i] != '\0'; i++)  // a supprimer
-//		printf("tab[%d] = %c\n", i , tab_itoa[i]);  // a supprimer
-	ft_strrev(tab_itoa);
-//	printf("\n%s\n(str apres rev)\n", tab_itoa); // a supprimer
 	return (tab_itoa);
 }
 
@@ -50,6 +54,8 @@ int	f_intlen(int n)
 {
 	int	i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
 	if (n < 0)
 	{
@@ -64,38 +70,20 @@ int	f_intlen(int n)
 	return (i);
 }
 
-char	*ft_strrev(char *str)
+int	main(void)
 {
-	int	i;
-	int	len;
-	int	tmp;
+	int	testint = 0;
+//	char	teststr[] = "156489";
 
-	i = 0;
-	len = ft_strlen(str);
-	while (i < len / 2)
-	{
-		tmp = str[i];
-		str[i] = str[len - i - 1];
-		str[len - i - 1] = tmp;
-		i++;
-	}
-	return (str);
+	// *** TEST F_INTLEN ***
+//	printf("__main (f_intlen) : %d\n", f_intlen(testint));
+
+	// *** TEST ft_strrev ***
+//	printf("__main (ft_strrev) : %s\n", ft_strrev(teststr));
+
+	// *** TEST ITOA ***
+	printf("__main (ft_itoa) : %s\n", ft_itoa(testint));
+//	ft_itoa(testint);
+
+	return (0);
 }
-
-// int	main(void)
-// {
-// 	int	testint = -15648658;
-// //	char	teststr[] = "156489";
-
-// 	*** TEST F_INTLEN ***
-// //	printf("__main (f_intlen) : %d\n", f_intlen(testint));
-
-// 	*** TEST ft_strrev ***
-// //	printf("__main (ft_strrev) : %s\n", ft_strrev(teststr));
-
-// 	*** TEST ITOA ***
-// 	printf("__main (ft_itoa) : %s\n", ft_itoa(testint));
-// //	ft_itoa(testint);
-
-// 	return (0);
-// }

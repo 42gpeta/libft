@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:45:13 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 23:47:23 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/12 15:37:05 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,33 @@
 
 #include "libft.h"
 
+int	ft_in_trim(char c, char const *set)
+{
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
+int	ft_count_trim(char const *s1, char const *set)
+{
+	int	i;
+	int	len;
+
+	len = ft_strlen(s1) - 1;
+	i = 0;
+	while (ft_in_trim(s1[i], set) && s1[i] != '\0')
+		i++;
+	while (ft_in_trim(s1[len], set) && len != 0)
+		len--;
+	if (len - i < 0)
+		return (0);
+	return (len - i);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
@@ -29,7 +56,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 //	char	*pset;
 	i = 0;
 //	pn = (char *)s1;
-	pn = malloc(sizeof(*pn) * 50);
+	pn = malloc(sizeof(char) * ft_count_trim(s1, set));
 // on skype les caracteres dans set qui sont avant le TXT
 	while (s1[i] == *set)
 		i++;

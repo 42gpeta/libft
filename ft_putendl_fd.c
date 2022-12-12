@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:23:40 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/02 16:08:18 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/12 14:08:59 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	// char	*ps;
+
+	if (s == NULL)
+		return ;
 	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\0', fd);
+	// printf("%s\n", ps);
+	ft_putchar_fd('\n', fd);
 }

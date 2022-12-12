@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 19:33:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 21:36:46 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/12 15:36:53 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 
 	len = ft_strlen(s);
-	ps = malloc(sizeof(ps) * len + 1);
+	ps = malloc(sizeof(char) * len + 1);
 	if (!ps)
 		return (NULL);
 	i = 0;

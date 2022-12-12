@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 17:44:37 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 15:58:03 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/12 15:36:54 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	nwtab_len;
 	void	*nwtab;
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
-	nwtab_len = nmemb * size;
-	nwtab = (void *)malloc(nwtab_len * sizeof(nwtab));
-	if (!nwtab || nwtab_len == 0)
+	if (nmemb * size / size != nmemb)
 		return (NULL);
-	ft_memset(nwtab, '\0', nwtab_len);
+	nwtab = (void *)malloc((nmemb * size) * sizeof(char));
+	if (!nwtab)
+		return (NULL);
+	ft_memset(nwtab, '\0', nmemb * size);
 	return (nwtab);
 }
 
