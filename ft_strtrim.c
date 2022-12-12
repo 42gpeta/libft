@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:45:13 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/12 15:37:05 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/12 21:19:24 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,25 @@ int	ft_in_trim(char c, char const *set)
 	return (0);
 }
 
-int	ft_count_trim(char const *s1, char const *set)
+// int	ft_count_trim(char const *s1, char const *set) // version complete
+// {
+// 	int	i;
+// 	int	len;
+
+// 	len = ft_strlen(s1) - 1;
+// 	i = 0;
+// 	while (ft_in_trim(s1[i], set) && s1[i] != '\0')
+// 		i++;
+// 	printf("ft_count ** i = %d\n", i); // a supprimer
+// 	while (ft_in_trim(s1[len], set) && len != 0)
+// 		len--;
+// 	printf("ft_count ** len = %d\n", len); // a supprimer
+// 	if (len - i < 0)
+// 		return (0);
+// 	return (len - i);
+// }
+
+int	ft_count_trim_before(char const *s1, char const *set) // avant txt
 {
 	int	i;
 	int	len;
@@ -41,14 +59,28 @@ int	ft_count_trim(char const *s1, char const *set)
 	i = 0;
 	while (ft_in_trim(s1[i], set) && s1[i] != '\0')
 		i++;
-	while (ft_in_trim(s1[len], set) && len != 0)
-		len--;
-	if (len - i < 0)
-		return (0);
-	return (len - i);
+		printf("before ** i = %d\n", i); // a supprimer
+	if (i == len)
+		return (len);
+	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+int	ft_count_trim_after(char const *s1, char const *set) // apres txt
+{
+	int	i;
+	int	len;
+
+	len = ft_strlen(s1) - 1;
+	i = 0;
+	while (ft_in_trim(s1[len], set) && len != 0)
+		len--;
+	printf("after ** len = %d\n", len); // a supprimer
+	return (len);
+}
+
+
+
+/* char	*ft_strtrim(char const *s1, char const *set) // original
 {
 	int		i;
 	int		j;
@@ -73,18 +105,43 @@ char	*ft_strtrim(char const *s1, char const *set)
 	pn[j] = '\0';
 	//}
 	return (pn);
+} */
+
+char	*ft_strtrim(char const *s1, char const *set) // on progress
+{
+	int		i;
+	int		j;
+	int		pos_b;
+	int		pos_a;
+	char	*pn;
+
+	i = 0;
+	pos_b = ft_count_trim_before(s1, set);
+	pos_a = ft_count_trim_after(s1, set);
+	pn = malloc(sizeof(char) *(pos_a - pos_b));
+	while (s1[i] == *set)
+		i++;
+	j = 0;
+	while (s1[i] != *set && s1[i + 1] != '\0' && pos_a <= pos_b)
+	{
+		pn[j] = s1[pos_a];
+		pos_a++;
+		j++;
+	}
+	pn[j] = '\0';
+	return (pn);
 }
 
-// int	main(void)
-// {
-// 	char	test[] = "|||///Salut/Ca/Va|/";
-// 	char	set[] = "|/";
-// 	char	*ptest;
+int	main(void)
+{
+	char	test[] = "|/Salut|Ca/Va|/";
+	char	set[] = "|/";
+	char	*ptest;
 
-// 	ptest = ft_strtrim(test, set);
+	ptest = ft_strtrim(test, set);
 
-// 	printf("before : %s\nafter : %s", test, ptest);
+	printf("before : %s\nafter : %s", test, ptest);
 
-// 	return (0);
+	return (0);
 
-// }
+}

@@ -1,53 +1,60 @@
-## 
-##	** SYNTAX **
-##
-## <cible> : <dependances>
-##	<commande>
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
+#    Updated: 2022/12/12 18:23:55 by gpeta            ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-##	** Vairables **
-##
-##	// declaration
-## <variable_name> = <name_de_ce_qu_on_veut>
-##
-##	// utilisation
-## $(variable_name)
 
+NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_bzero.c ft_isascii.c \
-ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c\
-ft_strchr.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
-ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c\
-ft_toupper.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c\
-ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
+ft_toupper.c ft_tolower.c ft_atoi.c ft_strlcat.c ft_memset.c ft_bzero.c \
+ft_memcpy.c ft_memmove.c ft_strchr.c ft_strrchr.c ft_strlcpy.c ft_memcmp.c ft_strnstr.c \
+ft_memchr.c ft_calloc.c ft_strdup.c ft_substr.c ft_strncmp.c ft_strjoin.c ft_strtrim.c \
+ft_itoa.c ft_putchar_fd.c ft_strmapi.c ft_striteri.c ft_putstr_fd.c ft_putendl_fd.c \
+ft_putnbr_fd.c ft_split.c
+
+
 OBJ = $(SRC:.c=.o)
-#SRC_BONUS =
-#OBJ_BONUS =
-AR = ar -rcs
-NAME = libft.a
+
+# BONUS = ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c
+
+BONUS_OBJ = $(BONUS:.c=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-#placement des objets dans la librairie
-	$(AR) $(NAME) $<
-	$(CC) $(OBJ) -o $(NAME)
-
 %.o : %.c
-# creation de tous les .o a partir des .c w/ flags
-	$(CC) $(CFLAGS) -c $<
+	$(CC) -o $@ -c $^ $(CFLAGS)
 
-clean : $(OBJ)
-	rm *.o
+$(NAME) : $(OBJ)
+	ar rc $(NAME) $(OBJ)
+
+bonus : $(BONUS_OBJ)
+	ar rc $(NAME) $(BONUS_OBJ)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+clean :
+	rm -rf $(OBJ) $(BONUS_OBJ)
 
 fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-
-
-
-
-
-
-
