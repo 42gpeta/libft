@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/12 18:23:55 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/13 20:18:49 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,3 +58,5 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
+
+.PHONY : all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:52:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 22:46:00 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/13 19:39:39 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len = (int)ft_strlen(s1) + (int)ft_strlen(s2);
 	//printf("s1 = %s | s2 = %s | len = %d\n", s1, s2, len); // a supprimer
 	if (!s1 || !s2)
-		return (NULL);
+		return (0);
 	join = malloc(sizeof(*join) * len + 1);
 	if (!join)
 		return (NULL);
@@ -58,23 +58,23 @@ char	*ft_strjoin(char const *s1, char const *s2)
 // 	return (join);
 // }
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	j;
+// char	*ft_strcat(char *dest, char *src)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0')
-	{
-		dest[i + j] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-	return ((char *)dest);
-}
+// 	i = 0;
+// 	j = 0;
+// 	while (dest[i] != '\0')
+// 		i++;
+// 	while (src[j] != '\0')
+// 	{
+// 		dest[i + j] = src[j];
+// 		j++;
+// 	}
+// 	dest[i + j] = '\0';
+// 	return ((char *)dest);
+// }
 
 /* int	main(void)
 {
