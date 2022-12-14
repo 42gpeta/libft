@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:31:59 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/12 15:57:57 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 11:03:16 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if (*s == (unsigned char)c)
 			return ((char *)s);
 			// on pointe sur la premiere occurence 
 		s++;

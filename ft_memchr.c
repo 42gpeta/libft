@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:10:51 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 16:08:50 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 11:11:55 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	char	*ps;
+	unsigned char	*ps;
 
 	i = 0;
-	ps = (char *)s; // on cast car il y a un void * en argument
+	ps = (unsigned char *)s; // on cast car il y a un void * en argument
 	while (i < n)
 	{
-		if (*ps == c)
+		if (*ps == (unsigned char)c)
 			return (ps); // on renvoi la premiere coccurence
 		i++;
 		ps++;

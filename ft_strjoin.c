@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:52:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/13 19:39:39 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 10:57:03 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*join;
 	int		len;
 
-	len = (int)ft_strlen(s1) + (int)ft_strlen(s2);
-	//printf("s1 = %s | s2 = %s | len = %d\n", s1, s2, len); // a supprimer
 	if (!s1 || !s2)
 		return (0);
-	join = malloc(sizeof(*join) * len + 1);
+	len = (int)ft_strlen(s1) + (int)ft_strlen(s2);
+	//printf("s1 = %s | s2 = %s | len = %d\n", s1, s2, len); // a supprimer
+	join = malloc(sizeof(char) * len + 1);
 	if (!join)
 		return (NULL);
 	i = 0;

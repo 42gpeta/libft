@@ -6,16 +6,23 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:22:05 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/09 18:35:25 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 11:45:59 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// a faire
-
 #include "libft.h"
 
-/* void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	
+	unsigned int	i;
+
+	i = 0;
+	if (!s || !(*f))
+		return ;
+	while (*s)
+	{
+		f(i, s);
+		i++;
+		s++;
+	}
 }
- */

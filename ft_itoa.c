@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:19:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/12 15:36:52 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 11:20:29 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	f_intlen(int n)
 	return (i);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int	testint = 0;
 //	char	teststr[] = "156489";
@@ -86,4 +86,4 @@ int	main(void)
 //	ft_itoa(testint);
 
 	return (0);
-}
+} */
