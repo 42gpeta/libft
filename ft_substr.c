@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 14:45:07 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/14 21:05:12 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/15 18:10:35 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@
 	return (ps);
 } */
 
-char	*ft_substr(char const *s, unsigned int start, size_t len) // 		code sans commentaire
+/* char	*ft_substr(char const *s, unsigned int start, size_t len) // 		code sans commentaire
 {
 	size_t	i;
 	char	*ps;
@@ -92,7 +92,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len) // 		code sans co
 	if (!ps)
 		return (NULL);
 	i = 0;
-	while (s[i] != '\0' || start < len)
+	while (s[i] != '\0' || i < len)
 	{
 		ps[i] = s[start];
 		i++;
@@ -100,27 +100,39 @@ char	*ft_substr(char const *s, unsigned int start, size_t len) // 		code sans co
 	}
 	ps[i] = '\0';
 	return (ps);
+} */
+
+char	*f_malloc(char const *s, size_t begin, size_t len)
+{
+	char	*ns;
+	size_t	slen;
+
+	slen = ft_strlen(s);
+	if (begin > slen) // cas au start est trop loin
+	{
+		ns = malloc(sizeof(char));
+		if (!ns)
+			return (NULL);
+		ns[0] = '\0';
+		return (ns);
+	}
+	else if (begin + len > slen) /* cas ou start OK mais start + len depasse le '\0'*/
+		ns = malloc(sizeof(char) * (slen - begin + 1));
+	else // cas normal
+		ns = malloc(sizeof(char) * (len + 1));
+	return (ns);
 }
 
-/* char	*ft_substr(char const *s, unsigned int start, size_t len) // 2 erreurs : 2 ; 10
+char	*ft_substr(char const *s, unsigned int start, size_t len) // 2 erreurs : 2 ; 10
 {
 	char	*ns;
 	size_t	i;
 
-	// if (!s)
-	// 	return (NULL);
-	// if (start > ft_strlen(s))
-	ns = malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
+	ns = f_malloc(s, start, len);
 	if (!ns)
 		return (NULL);
-	// else if 
-	// {
-	// 	// ns = malloc(sizeof(char) * (len + 1)); // 2-10
-	// 	// ns = malloc(sizeof(char) * (ft_strlen((char *)s + start) + 1)); // 4-12-16
-	// 	ns = malloc(sizeof(char) * (len + 1));
-	// 	if (!ns)
-	// 		return (NULL);
-
 	i = 0;
 	while (i < len && start < ft_strlen(s))
 	{
@@ -129,7 +141,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len) // 		code sans co
 	}
 	ns[i] = '\0';
 	return (ns);
-}*/
+}
 
 /* char	*ft_substr(char const *s, unsigned int start, size_t len) // 2 erreurs : 2 ; 10
 {
