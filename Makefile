@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/14 16:35:59 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/15 20:17:11 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ ft_putnbr_fd.c ft_split.c
 
 OBJ = $(SRC:.c=.o)
 
-# BONUS = ft_lstnew.c \
+ BONUS = ft_lstnew.c \
 ft_lstadd_front.c \
-ft_lstsize.c \
+#ft_lstsize.c \
 ft_lstlast.c \
 ft_lstadd_back.c \
 ft_lstdelone.c \
