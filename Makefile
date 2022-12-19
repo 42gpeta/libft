@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/16 16:30:15 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/19 18:35:08 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \
 ft_lstadd_back.c \
-#ft_lstdelone.c \
+ft_lstdelone.c \
 #ft_lstclear.c \
 #ft_lstiter.c \
 #ft_lstmap.c
