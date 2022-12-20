@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/20 14:46:28 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/20 16:50:45 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ ft_lstadd_back.c \
 ft_lstdelone.c \
 ft_lstclear.c \
 ft_lstiter.c \
-#ft_lstmap.c
+ft_lstmap.c
 
 BONUS_OBJ = $(BONUS:.c=.o)
 
