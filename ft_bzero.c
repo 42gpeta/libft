@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:55:49 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/28 14:27:31 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 15:55:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	ft_memset(s, '\0', n);
 }
 
- int main()
+/* int main()
 {
     char    test[] = "bonjour";
     char    test1[] = "bonjour";
@@ -35,5 +35,4 @@ void	ft_bzero(void *s, size_t n)
 	printf("ft_strlen apres	: %ld\n",ft_strlen(test1));
 
     return 0;
-}
- 
+} */

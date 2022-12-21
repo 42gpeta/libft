@@ -6,12 +6,17 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:23:40 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 18:30:14 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:21 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// a faire
-
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (s == NULL)
+		return ;
+	ft_putstr_fd(s, fd);
+	// printf("%s\n", ps);
+	ft_putchar_fd('\n', fd);
+}

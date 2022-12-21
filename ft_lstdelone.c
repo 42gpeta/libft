@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:03:32 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 18:33:45 by gpeta            ###   ########.fr       */
+/*   Created: 2022/12/19 18:34:47 by gpeta             #+#    #+#             */
+/*   Updated: 2022/12/20 14:06:00 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
-
-/* int	main(int argc, char argv[])
-{
-	char	test='q';
-
-	ft_isdigit(test);
-	printf("result = %d\nvaleur dec = %d", ft_isdigit(test), test);
-
-	return (0);
-} */

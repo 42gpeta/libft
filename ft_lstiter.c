@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 15:03:32 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 18:33:45 by gpeta            ###   ########.fr       */
+/*   Created: 2022/12/20 14:47:00 by gpeta             #+#    #+#             */
+/*   Updated: 2022/12/20 15:49:44 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	if (!lst)
+		return ;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
-
-/* int	main(int argc, char argv[])
-{
-	char	test='q';
-
-	ft_isdigit(test);
-	printf("result = %d\nvaleur dec = %d", ft_isdigit(test), test);
-
-	return (0);
-} */

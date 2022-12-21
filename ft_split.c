@@ -6,136 +6,146 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/01 16:22:55 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/10 23:25:54 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// a faire
+// OK
 
 #include "libft.h"
 
-/*int	f_next_is_wspace (char prev_c, char next_c)
-/*int	f_next_is_wspace (char *s, int len, char prev_c, char next_c)
-{
-	if (prev_c == 32 || (prev_c >= 9 && prev_c <= 13) && next_c == '\0')
-		wspace = 1;
-	else
-		wspace = 0;
-
-	if (s[len - 1] == wspace)
-	
-} */
-
-int	f_count (const char *s, char c)
+int	f_len(const char *s, char c)
 {
 	int	i;
-	int check;
 
-	if (!*s)
-		return (0);
 	i = 0;
-	check = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] != c && check == 0)
-		{
-			check = 1;
-			i++;
-		}
-		else if (s[i] == c)
-			check = 0;	
-		s++;
-		/*next = f_next_is_wspace(s[i], s[i + 1]);
-		if (next == 1)
-			word--;*/
-
-	}
-	
-//	printf("f_count ** nb word : %d\n", word);  // a supprimer
+	while (s[i] != c && s[i] != '\0')
+		i++;
+//	printf("f_len ** nb de char dans word : %d\n", i);  // a supprimer
 	return (i);
 }
 
-char	*f_tabsplit (const char *str, int firstc, int lastc)
+int	f_count(const char *s, char c)
 {
-	int i;
-	char *tab;
+	int	i;
+	int	word;
 
-	tab = malloc((lastc - firstc + 1) * sizeof(*tab));
-	if(!str || !tab)
-		return (0);
 	i = 0;
-	while (firstc < lastc)
+	word = 0;
+	while (*s)
 	{
-		tab[i++] = str[firstc++];
-		//i++;
-		//firstc++;
+		while (*s == c)
+			s++;
+		i = f_len(s, c);
+		s += i;
+		if (i != 0)
+			word++;
 	}
-	tab[i] == '\0';
-	
-	printf("f_tabsplit ** word decoupe : %s\n\n", tab);  // a supprimer
-	return (tab);
+//	printf("f_count ** nb word : %d\n", word);  // a supprimer
+	return (word);
 }
 
- char	**ft_split(const char *s, char c)
+char	*f_strndup(const char *s, int nj)
+{
+	int		i;
+	char	*ps;
+
+	i = 0;
+	ps = (char *)malloc(sizeof(char) * nj + 1);
+	if (!ps)
+		return (NULL);
+	while (s[i] && i < nj)
+	{
+		ps[i] = s[i];
+		i++;
+	}
+	ps[i] = '\0';
+	return (ps);
+}
+
+char	**ft_split(const char *s, char c)
 {
 	char	**ntab;
 	int		w;
 	int		i;
 	int		j;
-	int		pos;
 
-	w = f_count(s, c); // ?necessaire => oui
-	//printf("ft_split ** nb word : %d\n", w);  // a supprimer
-	ntab = malloc((w + 1)* sizeof(**ntab));
-	if (!s || !ntab)
+	if (s == NULL)
 		return (NULL);
-	
+	w = f_count(s, c);
+//	printf("ft_split ** nb word : %d\n", w);  // a supprimer
+	ntab = (char **)malloc(sizeof(char *) * (w + 1));
+	if (!ntab)
+		return (NULL);
 	i = 0;
 	j = 0;
-	pos = -1;
-	while (i <= ft_strlen(s))
+	while (i < w)
 	{
-		if (s[i] != c && pos < 0)
-			pos = i;
-		
-		else if (i == ft_strlen(s) || s[i] == c && pos >= 0)
-		{
-			ntab[j++] = f_tabsplit(s, pos, i); // comme ntab est un pointeur de pointeur, on stocke les elements mots dans le 1er tab, le 2e tab contient les lettres des mots
-			pos = -1;
-			//printf("f_tabsplit ** nbtab[%d] word : %s\n", j, ntab[j]);  // a supprimer
-			printf("ft_split ** nbtab[%d] word : %s\n", j, ntab[j]);  // a supprimer
-		}
+		while (*s == c)
+			s++;
+		j = f_len(s, c);
+		ntab[i] = f_strndup(s, j);
+		s += j;
 		i++;
 	}
-	ntab[j] = '\0';
+	ntab[i] = NULL;
 	return (ntab);
-} 
+}
 
-int	main(void)
+/* int	main(void)
 {
-	char	test[]= "Bonjour,les,amis, dr , tintin";
+	char	*test;
+	test = "Bonjour,les,amis, dr , tintin, ";
 	char	*ptest;
 	char	**ptest2;
 	int	i;
 	int number_word;
 
-	number_word = f_count(test, ',');
-	printf("f_count ** nb word : %d (main)\n", number_word);  // a supprimer
+//	 ******** F_COUNT ******** : compter les mots
+	
+//	number_word = f_count(test, ',');
+//	printf("f_count ** nb word : %d (main)\n", number_word);  // a supprimer
 
-	//f_count(test, ',');
-	//ptest = f_tabsplit(test,8,12);
-	ptest2 = ft_split(test, ',');
+	
+//	 ******** FT_SPLIT ******** : decouper les mots
 
-	//for (i = 0; i < strlen(ptest); i++)
-	//	printf("ptest[%d] : %c\n", i, ptest[i]);
+//	ptest = f_tabsplit(test,8,12);
+
+	
+//	 ******** FT_SPLIT ******** : fonction finale
+	
+//  	ptest2 = ft_split(test, ',');
 
 	printf("\n----------------------\n");
 
 	for (i = 0; i < number_word; i++)
 		printf("[%d] : %s \n",i, ptest2[i]);
 
-	printf("\nmot isole : %s\n",ptest2[0]);
+	printf("\nmot isole : %s\n",ptest2[1]);
+
+	printf("\n----------------------\n");
+
+	ptest2 = ft_split(test, ',');
+	printf("%s", ft_split(test, ',')[1]);
+	printf("%s", ft_split(test, ',')[2]);
+	printf("%s", ft_split(test, ',')[3]);
+
+
 	
 
 	return 0;
-}
+} */
+
+/* int		main(void) // *** BON MAIN ***
+{
+	int i = 0;
+	char **tab;
+
+	tab = ft_split("bonjour je m'appel Arthur", ' ');
+	while (i < 4)
+	{
+		printf("string %d : %s\n", i, tab[i]);
+		i++;
+	}
+	return (0);
+} */

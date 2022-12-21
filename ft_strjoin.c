@@ -6,11 +6,13 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:52:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:33:37 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 10:57:03 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// char	*ft_strcat(char *dest, char *src);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -19,10 +21,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*join;
 	int		len;
 
+	if (!s1 || !s2)
+		return (0);
 	len = (int)ft_strlen(s1) + (int)ft_strlen(s2);
-	if (s1 == NULL || s2 == NULL)
+	//printf("s1 = %s | s2 = %s | len = %d\n", s1, s2, len); // a supprimer
+	join = malloc(sizeof(char) * len + 1);
+	if (!join)
 		return (NULL);
-	join = malloc(sizeof(*join) * len);
 	i = 0;
 	while (s1[i] != '\0')
 	{
@@ -32,12 +37,44 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	while (s2[j] != '\0')
 	{
-		join[i] = s2[j];
-		i++;
+		join[i + j] = s2[j];
 		j++;
 	}
+	join [i + j] = '\0';
+	//printf("\n join = %s \n", join); // a supprimer
 	return (join);
 }
+
+// char	*ft_strjoin(char const *s1, char const *s2)
+// {
+// 	int		ljoin;
+// 	char	*join;
+
+// 	ljoin = ft_strlen(s1) + ft_strlen(s1);
+// 	join = malloc(sizeof(*join) * ljoin + 1);
+// 	join = ft_strcat(s1, s2);
+// 	join[ljoin] = '\0';
+
+// 	return (join);
+// }
+
+// char	*ft_strcat(char *dest, char *src)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	j = 0;
+// 	while (dest[i] != '\0')
+// 		i++;
+// 	while (src[j] != '\0')
+// 	{
+// 		dest[i + j] = src[j];
+// 		j++;
+// 	}
+// 	dest[i + j] = '\0';
+// 	return ((char *)dest);
+// }
 
 /* int	main(void)
 {

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:00:30 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:21:58 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/14 11:03:59 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	len;
-	int	i;
 
 	len = ft_strlen(s);
+	if ((unsigned char)c == '\0')
+		return ((char *)s + ft_strlen(s));
 	while (len-- > 0)
 	{
-		if (s[len] == c)
-			return ((char *)&s[len]); // on pointe sur l'adresse de la dernierre occurence 
+		if (s[len] == (unsigned char)c)
+			return ((char *)&s[len]);
+			// on pointe sur l'adresse de la derniere occurence 
 	}
 	return (NULL);
 }
@@ -34,7 +36,7 @@ char	*ft_strrchr(const char *s, int c)
 	printf("---------  MAN  ----------- \n");
 	printf("avant : %s\n", strMAN);
 	printf("apres : %s\n",strrchr(strMAN, 'o'));
-	
+
 	printf("\n---------  MOI  ----------- \n");
 	printf("avant : %s\n", strMOI);
 	printf("apres : %s\n", ft_strrchr(strMOI, 'o'));
