@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:27:23 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/14 11:10:04 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 15:09:27 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	i = 0;
 	res = (unsigned char)s1[i] - (unsigned char)s2[i];
-	//if (ft_strlen(s1) == 0)
 	if (n == 0)
 		return (0);
 	while (i < n - 1 && s1[i])
@@ -38,21 +37,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
-/* int	main()
-{
-	char	testMAN_1[]= "bonzour";
-	char	testMAN_2[]= "bonjour";
-	int		resMAN;
-	char	testMOI_1[]= "bonzour";
-	char	testMOI_2[]= "bonjour";
-	int		resMOI;
-
-	resMAN = strncmp(testMAN_1, testMAN_2, 7);
-	resMOI = ft_strncmp(testMOI_1,	testMOI_2, 7);
-
-	printf("MAN = %d\n", resMAN);
-	printf("MOI = %d\n", resMOI);
-
-	return (0);
-} */

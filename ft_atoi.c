@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:20:48 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 21:23:47 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:51:40 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 7 && nptr[i] <= 13)) // whitespace
+	while (nptr[i] == 32 || (nptr[i] >= 7 && nptr[i] <= 13))
 		i++;
-	while (nptr[i] == '+' || nptr[i] == '-') // gestion d'1 seul signe
+	while (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i + 1] == '+' || nptr[i + 1] == '-')
 			return (0);
@@ -38,20 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * sign);
 }
-
-/* int	main ()
-{
-	char MAN[]= "   -10";
-	char MOI[]= "   -10";
-	int resMAN;
-	int resMOI;
-
-	resMAN = atoi(MAN);
-	resMOI = ft_atoi(MOI);
-
-	printf("MAN = %d\n", resMAN);
-	printf("MOI = %d\n", resMOI);
-
-	return (0);
-
-} */

@@ -6,22 +6,14 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:19:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/14 11:20:29 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:54:17 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// a verifier
 
 #include "libft.h"
 
 int		f_intlen(int n);
-
-char	*ft_spe_case(int i)
-{
-	if (i == 0)
-		return (ft_strdup("0"));
-	return (ft_strdup("-2147483648"));
-}
+char	*f_spe_case(int i);
 
 char	*ft_itoa(int n)
 {
@@ -29,7 +21,7 @@ char	*ft_itoa(int n)
 	char	*tab_itoa;
 
 	if (n == 0 || n == -2147483648)
-		return (ft_spe_case(n));
+		return (f_spe_case(n));
 	len = f_intlen(n);
 	tab_itoa = malloc(sizeof(char) * (len + 1));
 	if (!tab_itoa)
@@ -48,6 +40,13 @@ char	*ft_itoa(int n)
 		len--;
 	}
 	return (tab_itoa);
+}
+
+char	*f_spe_case(int i)
+{
+	if (i == 0)
+		return (ft_strdup("0"));
+	return (ft_strdup("-2147483648"));
 }
 
 int	f_intlen(int n)
@@ -69,21 +68,3 @@ int	f_intlen(int n)
 	}
 	return (i);
 }
-
-/* int	main(void)
-{
-	int	testint = 0;
-//	char	teststr[] = "156489";
-
-	// *** TEST F_INTLEN ***
-//	printf("__main (f_intlen) : %d\n", f_intlen(testint));
-
-	// *** TEST ft_strrev ***
-//	printf("__main (ft_strrev) : %s\n", ft_strrev(teststr));
-
-	// *** TEST ITOA ***
-	printf("__main (ft_itoa) : %s\n", ft_itoa(testint));
-//	ft_itoa(testint);
-
-	return (0);
-} */

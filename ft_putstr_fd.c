@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:23:10 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/14 12:02:19 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:59:46 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,3 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[i] != '\0')
 		ft_putchar_fd(s[i++], fd);
 }
-
-/* int main(int ac, char **av)
-{
-	int fd = 1;
-
-
-	if (fd == 2)
-	{
-		ft_putstr_fd(av[1], fd);
-		printf("\nerreur\n");
-	}
-	else
-		printf("RAS\n");
-	return (0);
-}
- */

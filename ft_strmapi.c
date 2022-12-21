@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:20:31 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/12 17:07:32 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 15:41:12 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
-	char	*ns;
+	char	*new_s;
 
 	if (!s || !f)
 		return (NULL);
-	ns = ft_strdup(s);
-	if (ns == NULL)
+	new_s = ft_strdup(s);
+	if (new_s == NULL)
 		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		ns[i] = f(i, s[i]);
+		new_s[i] = f(i, s[i]);
 		i++;
 	}
-	return (ns);
+	return (new_s);
 }

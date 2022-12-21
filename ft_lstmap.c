@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:50:09 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/20 18:36:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:55:58 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&nlist, tmp);
 		lst = lst->next;
 	}
-
 	return (nlist);
 }

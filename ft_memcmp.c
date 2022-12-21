@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:57:08 by gpeta             #+#    #+#             */
-/*   Updated: 2022/11/18 19:58:50 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:56:54 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,21 +39,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (res);
 }
-
-/* int	main (void)
-{
-	char s1_MAN[]= "bonj";
-	char s2_MAN[]= "";
-	char s1_MOI[]= "bonj";
-	char s2_MOI[]= "";
-	int	MAN;
-	int	MOI;
-
-	MAN = memcmp(s1_MAN, s2_MAN, sizeof(s1_MAN));
-	MOI = ft_memcmp(s1_MOI, s2_MOI, sizeof(s1_MOI));
-
-	printf("MAN = %d\n", MAN);
-	printf("MOI = %d\n", MOI);
-
-	return (0);
-} */

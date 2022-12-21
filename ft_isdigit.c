@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:03:32 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 18:33:45 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:52:49 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,3 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
-
-/* int	main(int argc, char argv[])
-{
-	char	test='q';
-
-	ft_isdigit(test);
-	printf("result = %d\nvaleur dec = %d", ft_isdigit(test), test);
-
-	return (0);
-} */

@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 12:39:15 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 18:33:37 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:52:38 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-/* int	main(int argc, char *argv[])
-{
-	char	test='q';
-
-	ft_isalpha(test);
-	printf("result = %d\nvaleur dec = %d", ft_isalpha(test), test);
-
-	return (0);
-} */

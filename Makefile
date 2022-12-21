@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/20 16:50:45 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/21 15:47:10 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,6 @@ $(NAME) : $(OBJ)
 
 bonus : $(BONUS_OBJ)
 	ar rc $(NAME) $(BONUS_OBJ)
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
 
 clean :
 	rm -rf $(OBJ) $(BONUS_OBJ)

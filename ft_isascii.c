@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:23:20 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/11 18:33:42 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 14:52:44 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-
-/* int	main(int argc, char argv[])
-{
-	char	test=127;
-
-	ft_isascii(test);
-	printf("result = %d\nvaleur dec = %d\nexa = %x", ft_isascii(test), test, test);
-
-	return (0);
-} */

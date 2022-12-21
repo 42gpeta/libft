@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:38:47 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/10 23:29:53 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 15:14:28 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,3 @@ int	ft_toupper(int c)
 	else
 		return (c);
 }
-
-// int	main(void)
-// {
-	// char	testMAN = 'l';
-	// char	testMOI = 'l';
-
-	// printf("*** MAN ***\navant : %d | %c\napres : %d | %c\n\n", testMAN, testMAN, toupper(testMAN), toupper(testMAN));
-	// printf("*** MOI ***\navant : %d | %c\napres : %d | %c\n\n", testMOI, testMOI, ft_toupper(testMOI), ft_toupper(testMOI));
-	//return (0);
-// }
