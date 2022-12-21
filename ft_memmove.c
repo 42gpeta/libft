@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:58:19 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/21 14:57:55 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 22:01:25 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 		pdest[i] = psrc[i];
 		i++;
 	}
-	return (dest);
+	return (pdest);
 }

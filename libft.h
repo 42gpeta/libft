@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:12 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/21 19:11:26 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/21 22:00:27 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <unistd.h>
+# include <stdint.h>
 
 // Partie 1
 
