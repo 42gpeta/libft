@@ -6,16 +6,17 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/21 15:47:10 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/21 17:10:18 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ###############################################
 ##	ARGUMENTS
 
-NAME =		libft.a
-CC = 		gcc
-CFLAGS = 	-Wall -Wextra -Werror
+NAME =			libft.a
+CC = 			gcc
+CFLAGS = 		-Wall -Wextra -Werror
+NORMINETTE =	norminette -R CheckForbiddenSourceHeader *.c
 
 ###############################################
 ##	SOURCES
@@ -62,5 +63,8 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
+
+norminette :
+	$(NORMINETTE)
 
 .PHONY : all clean fclean re
