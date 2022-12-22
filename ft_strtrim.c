@@ -6,13 +6,13 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:45:13 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/21 15:34:30 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/22 10:57:58 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	f_in_trim(char c, char const *set);
+static int	f_in_trim(char c, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

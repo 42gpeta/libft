@@ -6,14 +6,14 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 18:19:35 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/21 14:54:17 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/22 10:56:01 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		f_intlen(int n);
-char	*f_spe_case(int i);
+static int	f_intlen(int n);
+static char	*f_spe_case(int i);
 
 char	*ft_itoa(int n)
 {

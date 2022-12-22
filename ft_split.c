@@ -6,17 +6,18 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/21 15:03:34 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/22 11:37:20 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		f_len(const char *s, char c);
-int		f_count(const char *s, char c);
-char	*f_strndup(const char *s, int nj);
+static int	f_len(const char *s, char c);
+static int	f_count(const char *s, char c);
+static char	*f_strndup(const char *s, int nj);
+static void	f_ntab_free(char **tab, int nb_word);
 
-char	**ft_split(const char *s, char c)
+/* char	**ft_split(const char *s, char c) // v1
 {
 	char	**ntab;
 	int		w;
@@ -42,6 +43,35 @@ char	**ft_split(const char *s, char c)
 	}
 	ntab[i] = NULL;
 	return (ntab);
+} */
+
+char	**ft_split(const char *s, char c)
+{
+	char	**ntab;
+	int		w;
+	int		i;
+	int		j;
+
+	if (s == NULL)
+		return (NULL);
+	w = f_count(s, c);
+	ntab = (char **)malloc(sizeof(char *) * (w + 1));
+	if (!ntab)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (i < w)
+	{
+		while (*s == c)
+			s++;
+		j = f_len(s, c);
+		ntab[i] = f_strndup(s, j);
+		if (!ntab[i])
+			return (f_ntab_free(ntab, i), NULL);
+		s += j;
+		i++;
+	}
+	return (ntab[i] = NULL, ntab);
 }
 
 int	f_count(const char *s, char c)
@@ -89,4 +119,16 @@ char	*f_strndup(const char *s, int nj)
 	}
 	ps[i] = '\0';
 	return (ps);
+}
+
+static void	f_ntab_free(char **tab, int nb_word)
+{
+	int	i;
+
+	i = 0;
+	while (i <= nb_word)
+	{
+		free(tab[i]);
+	}
+	free(tab);
 }
