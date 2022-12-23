@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:46:33 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/22 11:37:20 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/23 14:34:06 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,6 @@ static int	f_len(const char *s, char c);
 static int	f_count(const char *s, char c);
 static char	*f_strndup(const char *s, int nj);
 static void	f_ntab_free(char **tab, int nb_word);
-
-/* char	**ft_split(const char *s, char c) // v1
-{
-	char	**ntab;
-	int		w;
-	int		i;
-	int		j;
-
-	if (s == NULL)
-		return (NULL);
-	w = f_count(s, c);
-	ntab = (char **)malloc(sizeof(char *) * (w + 1));
-	if (!ntab)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < w)
-	{
-		while (*s == c)
-			s++;
-		j = f_len(s, c);
-		ntab[i] = f_strndup(s, j);
-		s += j;
-		i++;
-	}
-	ntab[i] = NULL;
-	return (ntab);
-} */
 
 char	**ft_split(const char *s, char c)
 {
