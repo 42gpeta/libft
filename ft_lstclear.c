@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 14:07:43 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/23 15:02:41 by gpeta            ###   ########.fr       */
+/*   Updated: 2022/12/23 17:01:46 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (!(*lst) || !del)
+	if (!lst || !(*lst) || !del)
 		return ;
 	while (*lst != NULL)
 	{
