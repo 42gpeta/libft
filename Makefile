@@ -6,7 +6,7 @@
 #    By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/11 18:34:10 by gpeta             #+#    #+#              #
-#    Updated: 2022/12/23 15:03:52 by gpeta            ###   ########.fr        #
+#    Updated: 2022/12/23 15:31:49 by gpeta            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 ##	ARGUMENTS
 
 NAME =			libft.a
-CC = 			gcc
+CC = 			cc
 CFLAGS = 		-Wall -Wextra -Werror
 NORMINETTE =	norminette -R CheckForbiddenSourceHeader *.c *.h
 
