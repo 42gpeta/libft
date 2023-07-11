@@ -6,7 +6,7 @@
 /*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 19:11:12 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/23 15:02:16 by gpeta            ###   ########.fr       */
+/*   Updated: 2023/07/04 21:32:53 by gpeta            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <ctype.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdarg.h>
 
 // Partie 1
 
@@ -64,21 +65,32 @@ void	ft_putnbr_fd(int n, int fd);
 
 // Bonus
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
+// typedef struct s_list
+// {
+// 	void			*content;
+// 	struct s_list	*next;
 
-}					t_list;
+// }					t_list;
 
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+// t_list	*ft_lstnew(void *content);
+// void	ft_lstadd_front(t_list **lst, t_list *new);
+// int		ft_lstsize(t_list *lst);
+// t_list	*ft_lstlast(t_list *lst);
+// void	ft_lstadd_back(t_list **lst, t_list *new);
+// void	ft_lstdelone(t_list *lst, void (*del)(void *));
+// void	ft_lstclear(t_list **lst, void (*del)(void *));
+// void	ft_lstiter(t_list *lst, void (*f)(void *));
+// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// Printf
+
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_puthexa(int n, char c);
+int		ft_puthexa_p(void *n);
+int		ft_putnbr(int n);
+int		ft_putnbr_u(int n);
+int		ft_putstr(char *s);
+int		f_check(va_list args, char c);
 
 #endif

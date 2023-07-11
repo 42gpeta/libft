@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpeta <gpeta@student.42.fr>                +#+  +:+       +#+        */
+/*   By: glodi <glodi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 18:44:02 by gpeta             #+#    #+#             */
-/*   Updated: 2022/12/23 15:02:37 by gpeta            ###   ########.fr       */
+/*   Created: 2022/11/07 15:03:32 by gpeta             #+#    #+#             */
+/*   Updated: 2023/06/30 18:08:25 by glodi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_isdigit(int c)
 {
-	t_list	*nlist;
-
-	nlist = malloc(sizeof(t_list));
-	if (!nlist)
-		return (NULL);
-	nlist->content = content;
-	nlist->next = NULL;
-	return (nlist);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }
